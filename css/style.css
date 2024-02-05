@@ -1,0 +1,106 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --transition: 0.8s cubic-bezier(.05, .5, 0, 1);
+}
+@font-face {
+	font-family: kamerik-3d;
+	src: url(../fonts/kamerik205-heavy.woff2);
+	font-weight: 900;
+}
+@font-face {
+	font-family: merriweather-italic-3d;
+	src: url(../fonts/merriweather-regular-italic.woff2);
+}
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: kamerik-3d;
+}
+.section {
+  perspective: 1000px;
+  overflow: hidden;
+}
+.section__container-layer {
+  height: 100vh;
+  min-height: 500px;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+  transition: transform var(--transition);
+  will-change: transform;
+}
+
+.container__layer-item {
+  display: flex;
+  position: absolute;
+  inset: -5vw;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.container__layer-item-1 {
+  transform: translateZ(-55px) scale(1.06);
+}
+.container__layer-item-2 {
+  transform: translateZ(80px) scale(0.8);
+}
+.container__layer-item-2 {
+  transform: translateZ(180px) scale(0.8);
+}
+.container__layer-item-3 {
+  transform: translateZ(190px) scale(0.8);
+}
+.container__layer-item-4 {
+  transform: translateZ(250px) scale(0.8);
+}
+.container__layer-item-5 {
+  transform: translateZ(300px) scale(0.8);
+}
+.container__layer-item-6 {
+  transform: translateZ(380px) scale(0.8);
+}
+
+.hero-content {
+  font-size: calc(var(--index) * 2.0);
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: calc(var(--index) * -.15);
+	line-height: 1.35em;
+}
+
+span {
+  display: block;
+  margin-bottom: calc(var(--index) * .7);
+}
+
+.hero-content__p {
+  font-family: merriweather-italic-3d;
+  font-size: calc(var(--index) * 1);
+	text-align: center;
+	letter-spacing: calc(var(--index) * 0.1);
+	line-height: 1.35em;
+  margin-bottom: calc(var(--index) * 3);
+}
+
+.button-start {
+  font-family: Arial;
+  font-size: calc(var(--index) * 0.7);
+  text-align: center;
+	letter-spacing: 0.3vw;
+  background-color: transparent;
+  padding: calc(var(--index) * 0.7) calc(var(--index) * 0.7);
+  outline: none;
+  border-radius: 10em;
+  border: rgb(255 255 255 / .4) calc(var(--index) * 0.1) solid;
+  cursor: pointer;
+  color: #fff;
+
+
+}
